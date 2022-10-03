@@ -349,3 +349,514 @@ Ok, one module loaded.
 [?1h=>>> :q
 [?1l>Leaving GHCi.
 ]0;risa@LAPTOP-RRDODLEA: ~/cs2022[01;32mrisa@LAPTOP-RRDODLEA[00m:[01;34m~/cs2022[00m$ git add .
+]0;risa@LAPTOP-RRDODLEA: ~/cs2022[01;32mrisa@LAPTOP-RRDODLEA[00m:[01;34m~/cs2022[00m$ git commit -m "start algo"
+[main 4822c9c] start algo
+ 4 files changed, 373 insertions(+), 1 deletion(-)
+ create mode 100644 ghci.log
+ create mode 100644 src/TemplateAlgo.hs
+ create mode 100644 stack.yaml.lock
+]0;risa@LAPTOP-RRDODLEA: ~/cs2022[01;32mrisa@LAPTOP-RRDODLEA[00m:[01;34m~/cs2022[00m$ git push
+Enumerating objects: 10, done.
+Counting objects:  10% (1/10)Counting objects:  20% (2/10)Counting objects:  30% (3/10)Counting objects:  40% (4/10)Counting objects:  50% (5/10)Counting objects:  60% (6/10)Counting objects:  70% (7/10)Counting objects:  80% (8/10)Counting objects:  90% (9/10)Counting objects: 100% (10/10)Counting objects: 100% (10/10), done.
+Delta compression using up to 8 threads
+Compressing objects:  14% (1/7)Compressing objects:  28% (2/7)Compressing objects:  42% (3/7)Compressing objects:  57% (4/7)Compressing objects:  71% (5/7)Compressing objects:  85% (6/7)Compressing objects: 100% (7/7)Compressing objects: 100% (7/7), done.
+Writing objects:  14% (1/7)Writing objects:  28% (2/7)Writing objects:  42% (3/7)Writing objects:  57% (4/7)Writing objects:  71% (5/7)Writing objects:  85% (6/7)Writing objects: 100% (7/7)Writing objects: 100% (7/7), 7.10 KiB | 1.42 MiB/s, done.
+Total 7 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/1)[Kremote: Resolving deltas: 100% (1/1)[Kremote: Resolving deltas: 100% (1/1), completed with 1 local object.[K
+To github.com:KiharaRisa/cs2022
+   8c0117f..4822c9c  main -> main
+]0;risa@LAPTOP-RRDODLEA: ~/cs2022[01;32mrisa@LAPTOP-RRDODLEA[00m:[01;34m~/cs2022[00m$ Script started on 2022-09-26 11:31:04+09:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="121" LINES="17"]
+]0;risa@LAPTOP-RRDODLEA: ~/cs2022[01;32mrisa@LAPTOP-RRDODLEA[00m:[01;34m~/cs2022[00m$ cat 'which[K[K[K[K[K[K`which igci`hci`[C[C[C[1Pghci`lghci`[C[C[C[C
+#!/bin/bash
+ginput | tee -a -i ghci.log | stack exec -- ghci 2>&1 | tee -a -i ghci.log
+]0;risa@LAPTOP-RRDODLEA: ~/cs2022[01;32mrisa@LAPTOP-RRDODLEA[00m:[01;34m~/cs2022[00m$ code ~/.local/bin
+]0;risa@LAPTOP-RRDODLEA: ~/cs2022[01;32mrisa@LAPTOP-RRDODLEA[00m:[01;34m~/cs2022[00m$ lghci src/Ten[KmplateAlgo.hs 
+GHCi, version 8.10.7: https://www.haskell.org/ghc/  :? for help
+Loaded GHCi configuration from /home/risa/cs2022/.ghci
+[1 of 1] Compiling TemplateAlgo     ( src/TemplateAlgo.hs, interpreted )
+
+[;1msrc/TemplateAlgo.hs:4:17: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    Variable not in scope: proc :: String -> String[0m[0m
+[;1m[34m  |[0m[0m
+[;1m[34m4 |[0m[0m main = interact [;1m[31mproc[0m[0m
+[;1m[34m  |[0m[0m[;1m[31m                 ^^^^[0m[0m
+[0m[0m[0mFailed, no modules loaded.
+2022-09-26 11:41:04.745327344
+[?1h=>>> :q
+[?1l>Leaving GHCi.
+]0;risa@LAPTOP-RRDODLEA: ~/cs2022[01;32mrisa@LAPTOP-RRDODLEA[00m:[01;34m~/cs2022[00m$ lghci src/TemplateAlgo.hs 
+GHCi, version 8.10.7: https://www.haskell.org/ghc/  :? for help
+Loaded GHCi configuration from /home/risa/cs2022/.ghci
+[1 of 1] Compiling TemplateAlgo     ( src/TemplateAlgo.hs, interpreted )
+Ok, one module loaded.
+2022-09-26 11:42:08.797960141
+[?1h=>>> worrd[K[Kds "This is a pen."
+[?1l>["This","is","a","pen."]
+2022-09-26 11:43:26.993809744
+[?1h=>>> :r
+[?1l>   1  module TemplateAlgo where
+   2  
+   3  main :: IO ()
+   4  main = interact func
+   5  
+   6  func :: String -> String
+   7  func input = case map (map readInt . words) (lines input) of
+   8      _ -> undefined 
+   9  
+  10  readInt :: String -> Int
+  11  readInt = read
+Ok, one module loaded.
+2022-09-26 12:06:47.478468163
+[?1h=>>> :l app/Main.hs
+[?1l>   1    module Main where
+   2    
+   3    main :: IO ()
+   4    main = interact func
+   5    
+   6    func :: String -> String
+   7    func input = undefined ([1 .. 3])
+   8    
+   9    showInt :: Int -> String
+  10    showInt = show
+[1 of 1] Compiling Main             ( app/Main.hs, interpreted )
+Ok, one module loaded.
+2022-09-26 12:07:23.797313102
+[?1h=>>> :l app/[K[K[K[K[K[K[Kmain
+[?1l>*** Exception: Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:79:14 in base:GHC.Err
+  undefined, called at app/Main.hs:7:14 in main:Main
+2022-09-26 12:08:34.921493196
+[?1h=>>> 
+[?1l><stdin>: hGetChar: illegal operation (handle is semi-closed)
+]0;risa@LAPTOP-RRDODLEA: ~/cs2022[01;32mrisa@LAPTOP-RRDODLEA[00m:[01;34m~/cs2022[00m$ *[K:q
+:q: command not found
+]0;risa@LAPTOP-RRDODLEA: ~/cs2022[01;32mrisa@LAPTOP-RRDODLEA[00m:[01;34m~/cs2022[00m$ *[K:l app/Main.hs
+:l: command not found
+]0;risa@LAPTOP-RRDODLEA: ~/cs2022[01;32mrisa@LAPTOP-RRDODLEA[00m:[01;34m~/cs2022[00m$ :l app/Main.hsq[Klghci src/TemplateAlgo.hs [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kapp/main[K[K[K[KMain.hs 
+GHCi, version 8.10.7: https://www.haskell.org/ghc/  :? for help
+Loaded GHCi configuration from /home/risa/cs2022/.ghci
+[1 of 1] Compiling Main             ( app/Main.hs, interpreted )
+Ok, one module loaded.
+2022-09-26 12:11:30.619046257
+[?1h=>>> main
+[?1l>*** Exception: Prelude.undefined
+CallStack (from HasCallStack):
+  error, called at libraries/base/GHC/Err.hs:79:14 in base:GHC.Err
+  undefined, called at app/Main.hs:7:14 in main:Main
+2022-09-26 12:11:34.973929061
+[?1h=>>> 
+[?1l><stdin>: hGetChar: illegal operation (handle is semi-closed)
+]0;risa@LAPTOP-RRDODLEA: ~/cs2022[01;32mrisa@LAPTOP-RRDODLEA[00m:[01;34m~/cs2022[00m$ lsh[K[Kghci app/Main.hs 
+GHCi, version 8.10.7: https://www.haskell.org/ghc/  :? for help
+Loaded GHCi configuration from /home/risa/cs2022/.ghci
+[1 of 1] Compiling Main             ( app/Main.hs, interpreted )
+
+[;1mapp/Main.hs:7:23: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • No instance for (Enum String)
+        arising from the arithmetic sequence ‘1 .. 3’
+    • In the first argument of ‘unlines’, namely ‘([1 .. 3])’
+      In the expression: unlines ([1 .. 3])
+      In an equation for ‘func’: func input = unlines ([1 .. 3])[0m[0m
+[;1m[34m  |[0m[0m
+[;1m[34m7 |[0m[0m func input = unlines ([;1m[31m[1 .. 3][0m[0m)
+[;1m[34m  |[0m[0m[;1m[31m                       ^^^^^^^^[0m[0m
+[0m[0m[0m
+[;1mapp/Main.hs:7:24: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • No instance for (Num String) arising from the literal ‘1’
+    • In the expression: 1
+      In the first argument of ‘unlines’, namely ‘([1 .. 3])’
+      In the expression: unlines ([1 .. 3])[0m[0m
+[;1m[34m  |[0m[0m
+[;1m[34m7 |[0m[0m func input = unlines ([[;1m[31m1[0m[0m .. 3])
+[;1m[34m  |[0m[0m[;1m[31m                        ^[0m[0m
+[0m[0m[0mFailed, no modules loaded.
+2022-09-26 12:12:19.620438638
+[?1h=>>> main
+[?1l>
+[;1m<interactive>:1:1: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • Variable not in scope: main
+    • Perhaps you meant ‘min’ (imported from Prelude)[0m[0m
+[0m[0m[0m2022-09-26 12:12:46.654969975
+[?1h=>>> app/Main.hs
+[?1l>
+[;1m<interactive>:2:5: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    Not in scope: ‘Main.hs’
+    No module named ‘Main’ is imported.[0m[0m
+[0m[0m[0m2022-09-26 12:13:19.980431732
+[?1h=>>> main
+[?1l>
+[;1m<interactive>:3:1: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • Variable not in scope: main
+    • Perhaps you meant ‘min’ (imported from Prelude)[0m[0m
+[0m[0m[0m2022-09-26 12:13:39.387789484
+[?1h=>>> main
+[?1l>
+[;1m<interactive>:4:1: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • Variable not in scope: main
+    • Perhaps you meant ‘min’ (imported from Prelude)[0m[0m
+[0m[0m[0m2022-09-26 12:15:09.84736481
+[?1h=>>> Script started on 2022-10-03 11:03:05+09:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="127" LINES="17"]
+]0;risa@LAPTOP-RRDODLEA: ~/cs2022[01;32mrisa@LAPTOP-RRDODLEA[00m:[01;34m~/cs2022[00m$ lghc[K[K[K[Kcat `@[Kwhi[Kich lghci`
+#!/bin/bash
+
+stack exec -- ghci $1
+]0;risa@LAPTOP-RRDODLEA: ~/cs2022[01;32mrisa@LAPTOP-RRDODLEA[00m:[01;34m~/cs2022[00m$ lghci app/Main.hs
+GHCi, version 8.10.7: https://www.haskell.org/ghc/  :? for help
+Loaded GHCi configuration from /home/risa/cs2022/.ghci
+[1 of 1] Compiling Main             ( app/Main.hs, interpreted )
+Ok, one module loaded.
+2022-10-03 11:08:02.541526015
+[?1h=>>> 27182 `mod` 818
+[?1l>188
+2022-10-03 11:13:44.48883976
+[?1h=>>> :r
+[?1l>   1  module Main where
+   2  
+   3  showInt :: Int -> String
+   4  showInt = show
+   5  
+   6  readInt :: String -> Int
+   7  readInt = read
+   8  
+   9  main :: IO ()
+  10  main = interact func
+  11  
+  12  -- func :: String -> String
+  13  -- func input = unlines (map showInt [1 .. 3])
+  14  
+  15  func :: String -> String
+  16  func input = 27182 `mod` 818
+[1 of 1] Compiling Main             ( app/Main.hs, interpreted )
+
+[;1mapp/Main.hs:16:14: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • No instance for (Num String) arising from the literal ‘27182’
+    • In the first argument of ‘mod’, namely ‘27182’
+      In the expression: 27182 `mod` 818
+      In an equation for ‘func’: func input = 27182 `mod` 818[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m16 |[0m[0m func input = [;1m[31m27182[0m[0m `mod` 818
+[;1m[34m   |[0m[0m[;1m[31m              ^^^^^[0m[0m
+[0m[0m[0m
+[;1mapp/Main.hs:16:14: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • No instance for (Integral String) arising from a use of ‘mod’
+    • In the expression: 27182 `mod` 818
+      In an equation for ‘func’: func input = 27182 `mod` 818[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m16 |[0m[0m func input = [;1m[31m27182 `mod` 818[0m[0m
+[;1m[34m   |[0m[0m[;1m[31m              ^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0mFailed, no modules loaded.
+2022-10-03 11:15:06.825863055
+[?1h=>>> :r
+[?1l>   1  module Main where
+   2  
+   3  showInt :: Int -> String
+   4  showInt = show
+   5  
+   6  readInt :: String -> Int
+   7  readInt = read
+   8  
+   9  main :: IO ()
+  10  main = interact func
+  11  
+  12  -- func :: String -> String
+  13  -- func input = unlines (map showInt [1 .. 3])
+  14  
+  15  func :: String -> String
+  16  func input = showInt (27182 `mod` 818)
+[1 of 1] Compiling Main             ( app/Main.hs, interpreted )
+Ok, one module loaded.
+2022-10-03 11:18:38.689765424
+[?1h=>>> :r
+[?1l>   1  module Main where
+   2  
+   3  showInt :: Int -> String
+   4  showInt = show
+   5  
+   6  readInt :: String -> Int
+   7  readInt = read
+   8  
+   9  main :: IO ()
+  10  main = interact func
+  11  
+  12  func :: String -> String
+  13  
+  14  -- func :: String -> String
+  15  -- func input = unlines (map showInt [1 .. 3])
+  16  
+  17  -- func :: String -> String
+  18  -- func input = showInt (27182 `mod` 818)
+  19  
+  20  -- func :: String -> String
+  21  -- func input = showInt (314 * (159 + 265) - 358)
+  22  
+  23  -- func :: String -> String
+  24  -- func input = showInt (60 * 60 * 24)
+  25  -- func input =showInt (2 * readInt iput)
+  26  
+  27   func input = case readInt input of
+  28      n -> showInt (2 * n)
+[1 of 1] Compiling Main             ( app/Main.hs, interpreted )
+
+[;1mapp/Main.hs:12:19: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • Expected kind ‘k0 -> k1 -> *’, but ‘String’ has kind ‘*’
+    • In the type ‘String -> String func input’
+      In a pattern type signature: String -> String func input
+      In the pattern: func :: String -> String func input[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m12 |[0m[0m func :: String -> [;1m[31mString[0m[0m
+[;1m[34m   |[0m[0m[;1m[31m                   ^^^^^^...[0m[0m
+[0m[0m[0mFailed, no modules loaded.
+2022-10-03 11:49:50.108649298
+[?1h=>>> :r
+[?1l>   1  module Main where
+   2  
+   3  showInt :: Int -> String
+   4  showInt = show
+   5  
+   6  readInt :: String -> Int
+   7  readInt = read
+   8  
+   9  main :: IO ()
+  10  main = interact func
+  11  
+  12  func :: String -> String
+  13  
+  14  -- func :: String -> String
+  15  -- func input = unlines (map showInt [1 .. 3])
+  16  
+  17  -- func :: String -> String
+  18  -- func input = showInt (27182 `mod` 818)
+  19  
+  20  -- func :: String -> String
+  21  -- func input = showInt (314 * (159 + 265) - 358)
+  22  
+  23  -- func :: String -> String
+  24  -- func input = showInt (60 * 60 * 24)
+  25  
+  26  -- func input =showInt (2 * readInt iput)
+  27  
+  28   func input = case readInt input of
+  29      n -> showInt (2 * n)
+[1 of 1] Compiling Main             ( app/Main.hs, interpreted )
+
+[;1mapp/Main.hs:12:19: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • Expected kind ‘k0 -> k1 -> *’, but ‘String’ has kind ‘*’
+    • In the type ‘String -> String func input’
+      In a pattern type signature: String -> String func input
+      In the pattern: func :: String -> String func input[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m12 |[0m[0m func :: String -> [;1m[31mString[0m[0m
+[;1m[34m   |[0m[0m[;1m[31m                   ^^^^^^...[0m[0m
+[0m[0m[0mFailed, no modules loaded.
+2022-10-03 11:51:33.970144353
+[?1h=>>> :r
+[?1l>   1  module Main where
+   2  
+   3  showInt :: Int -> String
+   4  showInt = show
+   5  
+   6  readInt :: String -> Int
+   7  readInt = read
+   8  
+   9  main :: IO ()
+  10  main = interact func
+  11  
+  12  func :: String -> String
+  13  
+  14  -- func :: String -> String
+  15  -- func input = unlines (map showInt [1 .. 3])
+  16  
+  17  -- func :: String -> String
+  18  -- func input = showInt (27182 `mod` 818)
+  19  
+  20  -- func :: String -> String
+  21  -- func input = showInt (314 * (159 + 265) - 358)
+  22  
+  23  -- func :: String -> String
+  24  -- func input = showInt (60 * 60 * 24)
+  25  
+  26  -- func input =showInt (2 * readInt iput)
+  27  
+  28   func input = case readInt input of
+  29      n -> showInt (2 * n)
+[1 of 1] Compiling Main             ( app/Main.hs, interpreted )
+
+[;1mapp/Main.hs:12:19: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • Expected kind ‘k0 -> k1 -> *’, but ‘String’ has kind ‘*’
+    • In the type ‘String -> String func input’
+      In a pattern type signature: String -> String func input
+      In the pattern: func :: String -> String func input[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m12 |[0m[0m func :: String -> [;1m[31mString[0m[0m
+[;1m[34m   |[0m[0m[;1m[31m                   ^^^^^^...[0m[0m
+[0m[0m[0mFailed, no modules loaded.
+2022-10-03 11:51:53.807105063
+[?1h=>>> :r
+[?1l>   1  module Main where
+   2  
+   3  showInt :: Int -> String
+   4  showInt = show
+   5  
+   6  readInt :: String -> Int
+   7  readInt = read
+   8  
+   9  main :: IO ()
+  10  main = interact func
+  11  
+  12  func :: String -> String
+  13  
+  14  -- func :: String -> String
+  15  -- func input = unlines (map showInt [1 .. 3])
+  16  
+  17  -- func :: String -> String
+  18  -- func input = showInt (27182 `mod` 818)
+  19  
+  20  -- func :: String -> String
+  21  -- func input = showInt (314 * (159 + 265) - 358)
+  22  
+  23  -- func :: String -> String
+  24  -- func input = showInt (60 * 60 * 24)
+  25  
+  26  -- func input =showInt (2 * readInt iput)
+  27  
+  28   func input = case readInt input of
+  29      n -> showInt (2 * n)
+[1 of 1] Compiling Main             ( app/Main.hs, interpreted )
+
+[;1mapp/Main.hs:12:19: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • Expected kind ‘k0 -> k1 -> *’, but ‘String’ has kind ‘*’
+    • In the type ‘String -> String func input’
+      In a pattern type signature: String -> String func input
+      In the pattern: func :: String -> String func input[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m12 |[0m[0m func :: String -> [;1m[31mString[0m[0m
+[;1m[34m   |[0m[0m[;1m[31m                   ^^^^^^...[0m[0m
+[0m[0m[0mFailed, no modules loaded.
+2022-10-03 11:52:20.048554806
+[?1h=>>> ;r
+[?1l>
+[;1m<interactive>:8:2: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    Parse error: module header, import declaration
+    or top-level declaration expected.[0m[0m
+[0m[0m[0m2022-10-03 11:52:23.038503318
+[?1h=>>> :r
+[?1l>   1  module Main where
+   2  
+   3  showInt :: Int -> String
+   4  showInt = show
+   5  
+   6  readInt :: String -> Int
+   7  readInt = read
+   8  
+   9  main :: IO ()
+  10  main = interact func
+  11  
+  12  func :: String -> String
+  13  
+  14  -- func :: String -> String
+  15  -- func input = unlines (map showInt [1 .. 3])
+  16  
+  17  -- func :: String -> String
+  18  -- func input = showInt (27182 `mod` 818)
+  19  
+  20  -- func :: String -> String
+  21  -- func input = showInt (314 * (159 + 265) - 358)
+  22  
+  23  -- func :: String -> String
+  24  -- func input = showInt (60 * 60 * 24)
+  25  
+  26  -- func input =showInt (2 * readInt iput)
+  27  
+  28   func input = case readInt input of
+  29      n -> showInt (2 * n)
+[1 of 1] Compiling Main             ( app/Main.hs, interpreted )
+
+[;1mapp/Main.hs:12:19: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • Expected kind ‘k0 -> k1 -> *’, but ‘String’ has kind ‘*’
+    • In the type ‘String -> String func input’
+      In a pattern type signature: String -> String func input
+      In the pattern: func :: String -> String func input[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m12 |[0m[0m func :: String -> [;1m[31mString[0m[0m
+[;1m[34m   |[0m[0m[;1m[31m                   ^^^^^^...[0m[0m
+[0m[0m[0mFailed, no modules loaded.
+2022-10-03 11:52:26.144880073
+[?1h=>>> :r
+[?1l>   1  module Main where
+   2  
+   3  showInt :: Int -> String
+   4  showInt = show
+   5  
+   6  readInt :: String -> Int
+   7  readInt = read
+   8  
+   9  main :: IO ()
+  10  main = interact func
+  11  
+  12  func :: String -> String
+  13  
+  14  -- func :: String -> String
+  15  -- func input = unlines (map showInt [1 .. 3])
+  16  
+  17  -- func :: String -> String
+  18  -- func input = showInt (27182 `mod` 818)
+  19  
+  20  -- func :: String -> String
+  21  -- func input = showInt (314 * (159 + 265) - 358)
+  22  
+  23  -- func :: String -> String
+  24  -- func input = showInt (60 * 60 * 24)
+  25  
+  26  -- func input =showInt (2 * readInt iput)
+  27  
+  28   func input = case readInt input of
+  29      n -> showInt (2 * n)
+[1 of 1] Compiling Main             ( app/Main.hs, interpreted )
+
+[;1mapp/Main.hs:12:19: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+    • Expected kind ‘k0 -> k1 -> *’, but ‘String’ has kind ‘*’
+    • In the type ‘String -> String func input’
+      In a pattern type signature: String -> String func input
+      In the pattern: func :: String -> String func input[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m12 |[0m[0m func :: String -> [;1m[31mString[0m[0m
+[;1m[34m   |[0m[0m[;1m[31m                   ^^^^^^...[0m[0m
+[0m[0m[0mFailed, no modules loaded.
+2022-10-03 11:53:10.424114101
+[?1h=>>> :r
+[?1l>   1  module Main where
+   2  
+   3  showInt :: Int -> String
+   4  showInt = show
+   5  
+   6  readInt :: String -> Int
+   7  readInt = read
+   8  
+   9  main :: IO ()
+  10  main = interact func
+  11  
+  12  func :: String -> String
+  13  
+  14  -- func :: String -> String
+  15  -- func input = unlines (map showInt [1 .. 3])
+  16  
+  17  -- func :: String -> String
+  18  -- func input = showInt (27182 `mod` 818)
+  19  
+  20  -- func :: String -> String
+  21  -- func input = showInt (314 * (159 + 265) - 358)
+  22  
+  23  -- func :: String -> String
+  24  -- func input = showInt (60 * 60 * 24)
+  25  
+  26  -- func input =showInt (2 * readInt iput)
+  27  
+  28  func input = case readInt input of
+  29      n -> showInt (2 * n)
+[1 of 1] Compiling Main             ( app/Main.hs, interpreted )
+Ok, one module loaded.
+2022-10-03 11:55:15.466306851
+[?1h=>>> :q
+[?1l>Leaving GHCi.
+]0;risa@LAPTOP-RRDODLEA: ~/cs2022[01;32mrisa@LAPTOP-RRDODLEA[00m:[01;34m~/cs2022[00m$ git add /[K,[K/[K.
