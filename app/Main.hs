@@ -34,6 +34,14 @@ func :: String -> String
 -- func input = case words input of
 --     [s] -> concat (replicate 3 s )
 
-func input = case words iput of
-    s:_ -> unlines [concat(replicte 3 s)]
-    []  -> error "invalid input"
+-- func input = case words input of
+--     s:_ -> unlines [concat(replicate 3 s)]
+--     []  -> error "invalid input"
+
+func input = undefined
+
+-- func input = case map words (lines input ) of
+--     [[s]] -> unlines [[s !! 2]]
+
+-- func input = case map (map readInt . words) (lines input) of
+--     [[x]] -> unlines [showInt (24 - x )]

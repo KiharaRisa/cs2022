@@ -860,3 +860,53 @@ Ok, one module loaded.
 [?1h=>>> :q
 [?1l>Leaving GHCi.
 ]0;risa@LAPTOP-RRDODLEA: ~/cs2022[01;32mrisa@LAPTOP-RRDODLEA[00m:[01;34m~/cs2022[00m$ git add /[K,[K/[K.
+]0;risa@LAPTOP-RRDODLEA: ~/cs2022[01;32mrisa@LAPTOP-RRDODLEA[00m:[01;34m~/cs2022[00m$ git commit -m "add uoto[K[K[Kpto sta[Kdin-3[K1-3"
+[main 2247478] add upto stdin-1-3
+ 3 files changed, 549 insertions(+), 5 deletions(-)
+]0;risa@LAPTOP-RRDODLEA: ~/cs2022[01;32mrisa@LAPTOP-RRDODLEA[00m:[01;34m~/cs2022[00m$ git push
+Enumerating objects: 13, done.
+Counting objects:   7% (1/13)Counting objects:  15% (2/13)Counting objects:  23% (3/13)Counting objects:  30% (4/13)Counting objects:  38% (5/13)Counting objects:  46% (6/13)Counting objects:  53% (7/13)Counting objects:  61% (8/13)Counting objects:  69% (9/13)Counting objects:  76% (10/13)Counting objects:  84% (11/13)Counting objects:  92% (12/13)Counting objects: 100% (13/13)Counting objects: 100% (13/13), done.
+Delta compression using up to 8 threads
+Compressing objects:  16% (1/6)Compressing objects:  33% (2/6)Compressing objects:  50% (3/6)Compressing objects:  66% (4/6)Compressing objects:  83% (5/6)Compressing objects: 100% (6/6)Compressing objects: 100% (6/6), done.
+Writing objects:  14% (1/7)Writing objects:  28% (2/7)Writing objects:  42% (3/7)Writing objects:  57% (4/7)Writing objects:  71% (5/7)Writing objects:  85% (6/7)Writing objects: 100% (7/7)Writing objects: 100% (7/7), 3.74 KiB | 637.00 KiB/s, done.
+Total 7 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/3)[Kremote: Resolving deltas:  33% (1/3)[Kremote: Resolving deltas:  66% (2/3)[Kremote: Resolving deltas: 100% (3/3)[Kremote: Resolving deltas: 100% (3/3), completed with 3 local objects.[K
+To github.com:KiharaRisa/cs2022
+   4822c9c..2247478  main -> main
+]0;risa@LAPTOP-RRDODLEA: ~/cs2022[01;32mrisa@LAPTOP-RRDODLEA[00m:[01;34m~/cs2022[00m$ Script started on 2022-10-17 10:54:36+09:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="121" LINES="17"]
+]0;risa@LAPTOP-RRDODLEA: ~/cs2022[01;32mrisa@LAPTOP-RRDODLEA[00m:[01;34m~/cs2022[00m$ stack build
+[0mcs2022-0.1.0.0: unregistering (local file changes: app/Main.hs src/TemplateAlgo.hs)[0m
+[0mcs2022> build (lib + exe)[0m
+[0mPreprocessing library for cs2022-0.1.0.0..[0m
+[0mBuilding library for cs2022-0.1.0.0..[0m
+[0m[3 of 3] Compiling TemplateAlgo[0m
+[0mPreprocessing executable 'cs2022' for cs2022-0.1.0.0..[0m
+[0mBuilding executable 'cs2022' for cs2022-0.1.0.0..[0m
+[0m[2 of 2] Compiling Main[0m
+[0mLinking .stack-work/dist/x86_64-linux-tinfo6/Cabal-3.2.1.0/build/cs2022/cs2022 ...[0m
+[0mcs2022> copy/register[0m
+[0mInstalling library in /home/risa/cs2022/.stack-work/install/x86_64-linux-tinfo6/47d50dc1cca1eb4d88dfbc433da97ba13941bdea4c926108104e50e11ab28061/8.10.7/lib/x86_64-linux-ghc-8.10.7/cs2022-0.1.0.0-BUCyn38qLb36zUXpKHew9j[0m
+[0mInstalling executable cs2022 in /home/risa/cs2022/.stack-work/install/x86_64-linux-tinfo6/47d50dc1cca1eb4d88dfbc433da97ba13941bdea4c926108104e50e11ab28061/8.10.7/bin[0m
+[0mRegistering library for cs2022-0.1.0.0..[0m
+]0;risa@LAPTOP-RRDODLEA: ~/cs2022[01;32mrisa@LAPTOP-RRDODLEA[00m:[01;34m~/cs2022[00m$ stack build
+[0mcs2022-0.1.0.0: unregistering (local file changes: app/Main.hs)[0m
+[0mcs2022> build (lib + exe)[0m
+[0mPreprocessing library for cs2022-0.1.0.0..[0m
+[0mBuilding library for cs2022-0.1.0.0..[0m
+[0mPreprocessing executable 'cs2022' for cs2022-0.1.0.0..[0m
+[0mBuilding executable 'cs2022' for cs2022-0.1.0.0..[0m
+[0m[2 of 2] Compiling Main[0m
+[0m[0m
+[0m/home/risa/cs2022/[;1mapp/Main.hs:46:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Woverlapping-patterns[0m[0m[;1m][0m[0m[;1m[0m
+[0m    Pattern match is redundant[0m
+[0m    In an equation for ‘func’: func input = ...[0m[0m[0m
+[0m[;1m[34m   |[0m[0m[0m
+[0m[;1m[34m46 |[0m[0m [;1m[35mfunc input = case map (map readInt . words) (lines input) of[0m[0m[0m
+[0m[;1m[34m   |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^...[0m[0m[0m
+[0mLinking .stack-work/dist/x86_64-linux-tinfo6/Cabal-3.2.1.0/build/cs2022/cs2022 ...[0m
+[0m[0m[0m[0m[0m
+[0mcs2022> copy/register[0m
+[0mInstalling library in /home/risa/cs2022/.stack-work/install/x86_64-linux-tinfo6/47d50dc1cca1eb4d88dfbc433da97ba13941bdea4c926108104e50e11ab28061/8.10.7/lib/x86_64-linux-ghc-8.10.7/cs2022-0.1.0.0-BUCyn38qLb36zUXpKHew9j[0m
+[0mInstalling executable cs2022 in /home/risa/cs2022/.stack-work/install/x86_64-linux-tinfo6/47d50dc1cca1eb4d88dfbc433da97ba13941bdea4c926108104e50e11ab28061/8.10.7/bin[0m
+[0mRegistering library for cs2022-0.1.0.0..[0m
+]0;risa@LAPTOP-RRDODLEA: ~/cs2022[01;32mrisa@LAPTOP-RRDODLEA[00m:[01;34m~/cs2022[00m$ git add /[K.
